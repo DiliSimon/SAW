@@ -15,8 +15,8 @@ def import_experiment_data(filename):
         arr = f.read().split('\n')[1:]
     for row in arr:
         temp = row.split()
-        p.append(float(temp[0]))
-        n.append(float(temp[3]))
+        n.append(float(temp[0]))
+        p.append(float(temp[3]))
     return p,n
 
 
