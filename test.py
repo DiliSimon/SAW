@@ -8,6 +8,18 @@ from collections import defaultdict
 import sys
 
 
+def import_experiment_data(filename):
+    p = list()
+    n = list()
+    with open(filename, 'r') as f:
+        arr = f.read().split('\n')[1:]
+    for row in arr:
+        temp = row.split()
+        p.append(float(temp[0]))
+        n.append(float(temp[3]))
+    return p,n
+
+
 def import_data(filename):
     vec = list()
     with open(filename, 'r') as f:
