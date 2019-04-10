@@ -4,6 +4,20 @@
 import stdarray
 import math
 import random
+from collections import defaultdict
+import sys
+
+
+def import_data(filename):
+    vec = list()
+    with open(filename, 'r') as f:
+        arr = f.read().split('\n')[1:]
+    for row in arr:
+        temp = row.split()
+        temp[0] = int(temp[0])
+        temp[1] = int(temp[1])
+        vec.append(temp)
+    return vec
 
 
 def experiment(n, trials):
