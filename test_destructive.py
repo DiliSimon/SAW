@@ -35,13 +35,13 @@ def import_data(filename):
 def experiment(n, trials):
     num_dead = 0
     for t in range(trials):
+
         # Create an n-by-n array, with all elements set to False.
-        a = stdarray.create2D(180, 180, False)
+        a = stdarray.create2D(100, 100, False)
 
         x = n//2
         y = n//2
         step = 0
-        forbid_direction = 0
         while step < n:
             # Check for dead end and make a random move.
             a[x][y] = True
@@ -50,20 +50,14 @@ def experiment(n, trials):
             #    num_dead += 1
             #    break
             r = random.randrange(1, 5)
-            while r == forbid_direction:
-                r = random.randrange(1, 5)
-            if (r == 1):
+            if (r == 1) and (not a[x+1][y]):
                 x += 1
-                forbid_direction = 2
-            elif (r == 2):
+            elif (r == 2) and (not a[x-1][y]):
                 x -= 1
-                forbid_direction = 1
-            elif (r == 3):
+            elif (r == 3) and (not a[x][y+1]):
                 y += 1
-                forbid_direction = 4
-            elif (r == 4):
+            elif (r == 4) and (not a[x][y-1]):
                 y -= 1
-                forbid_direction = 3
             if a[x][y]:
                 num_dead += 1
                 break

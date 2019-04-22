@@ -1,13 +1,11 @@
-import test
+import test_destructive
 
 
 def main():
     real_number = []
-    real_number = test.import_data('saw_number')
-    '''''
+    # real_number = test.import_data('saw_number')
     for i in range(28, 45):
         real_number.append([i, 0])
-    '''''
     print('{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}'.format('num_step', 'Cn', 'p_real',
                                                                                    'p_bar', 'upperbound', 'lowerbound',
                                                                                    'cc_lower','cc','cc_upper'))
@@ -22,8 +20,6 @@ def main():
         print('{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}{:<60s}'.format(str(num_step), str(Cn), str(p_real), str(p_bar),
                                                                                        str(upperbound), str(lowerbound),
                                                                                        str(lower), str(cc), str(upper)))
-        if num_step > 15:
-            break
 
 
 if __name__ == '__main__':
